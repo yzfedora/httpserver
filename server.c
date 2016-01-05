@@ -389,7 +389,7 @@ static char *get_mime_type(const char *name)
 	if (strcmp(ext, ".mp3") == 0)
 		return "audio/mpeg";
 
-	return NULL;
+	return "text/plain";
 }
 
 /*
