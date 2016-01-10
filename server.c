@@ -262,7 +262,7 @@ static void response_bad_request(int sk)
 			  "%s 400 Bad Request\r\n"
 			  "Server: %s\r\n"
 			  "Date: %s\r\n"
-			  "Content-Type: text/html\r\n"
+			  "Content-Type: text/html; charset=utf-8\r\n"
 			  "Content-Length: %ld\r\n"
 			  "Connection: close\r\n\r\n"
 			  "%s", HTTP_VERSION, SERV_VERSION,
@@ -283,7 +283,7 @@ static void response_not_supported(int sk)
 			  "%s 501 Not supported\r\n"
 			  "Server: %s\r\n"
 			  "Date: %s\r\n"
-			  "Content-Type: text/html\r\b"
+			  "Content-Type: text/html; charset=utf-8\r\n"
 			  "Content-Length: %ld\r\n"
 			  "Connection: close\r\n\r\n"
 			  "%s", HTTP_VERSION, SERV_VERSION,
@@ -304,7 +304,7 @@ static void response_not_found(int sk)
 			  "%s 404 Not Found\r\n"
 			  "Server: %s\r\n"
 			  "Date: %s\r\n"
-			  "Content-Type: text/html\r\b"
+			  "Content-Type: text/html; charset=utf-8\r\n"
 			  "Content-Length: %ld\r\n"
 			  "Connection: close\r\n\r\n"
 			  "%s", HTTP_VERSION, SERV_VERSION,
@@ -326,7 +326,7 @@ static void response_found(int sk, const char *pathname)
 			  "Server: %s\r\n"
 			  "Date: %s\r\n"
 			  "Location: %s\\\r\n"
-			  "Content-Type: text/html\r\n"
+			  "Content-Type: text/html; charset=utf-8\r\n"
 			  "Content-Length: %ld\r\n"
 			  "Connection: close\r\n\r\n"
 			  "%s", HTTP_VERSION, SERV_VERSION,
@@ -348,7 +348,7 @@ static void response_forbidden(int clisk)
 			  "%s 403 Forbidden\r\n"
 			  "Server: %s\r\n"
 			  "Date: %s\r\n"
-			  "Content-Type: text/html\r\n"
+			  "Content-Type: text/html; charset=utf-8\r\n"
 			  "Content-Length: %ld\r\n"
 			  "Connection: close\r\n\r\n"
 			  "%s", HTTP_VERSION, SERV_VERSION,
@@ -369,7 +369,7 @@ static char *get_mime_type(const char *name)
 		return NULL;
 
 	if (strcmp(ext, ".html") == 0 || strcmp(ext, ".htm") == 0)
-		return "text/html";
+		return "text/html; charset=utf-8";
 	if (strcmp(ext, ".jpg") == 0 || strcmp(ext, ".jpeg") == 0)
 		return "image/jpeg";
 	if (strcmp(ext, ".gif") == 0)
@@ -389,7 +389,7 @@ static char *get_mime_type(const char *name)
 	if (strcmp(ext, ".mp3") == 0)
 		return "audio/mpeg";
 
-	return "text/plain";
+	return "text/plain; charset=utf-8";
 }
 
 /*
@@ -593,7 +593,7 @@ static int transfer_dir_contents(int clisk, char **contents,
 		       "%s 200 OK\r\n"
 		       "Server: %s\r\n"
 		       "Date: %s\r\n"
-		       "Content-Type: text/html\r\n"
+		       "Content-Type: text/html; charset=utf-8\r\n"
 		       "Content-Length: %ld\r\n"
 		       "Connection: close\r\n\r\n"
 		       "%s", HTTP_VERSION, SERV_VERSION,
