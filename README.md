@@ -12,16 +12,3 @@ The thread-pool implementation under the Linux or Unix-like system.
 
 	- and there is a simple http server code in the source tree. also, it
 	  explains how to use this thread pool APIs.
-
-# a little story
-	All of this source code is start as a job. as a freelancer, my
-	bids is 5 AUD/hourly, and I used 16 hours to finish the job,
-	but because some reason, the client only paid me 10 AUD. because
-	the project only allows people work 2 hours maximum per week!
-	
-	I'm a newbie in that time. finally, the freelancer.com will
-	subtract the service fee. and I get 1 AUD in the last.
-	1300+ lines code worth 1AUD? are you kiding me? :-)...
-	
-	So, I think the most useful code is the thread pool, and I hope
-	everyone can use it free in their project or program.
